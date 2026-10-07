@@ -41,7 +41,7 @@ int main(void)
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
 
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
-    printf("|                            RECORDS                            |\n");
+    printf("|                           RECORDS                             |\n");
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
     printf("   1.Batch code           : %d                                   \n",batch_code);
     printf("   2.Medicine name        : Paracetamol                          \n");
