@@ -3,7 +3,7 @@ int main(void)
 {   
 
     int batch_code,strip,year,month,day;
-    int crt_year, crt_month, crt_day;
+    int crnt_year, crnt_month, crnt_day;
     double strip_price;
 
     printf("Enter the batch code: ");
@@ -16,13 +16,13 @@ int main(void)
     scanf("%lf", &strip_price);
 
     printf("Current date (YYYY / MM /DD): ");
-    scanf("%d%d%d", &crt_year, &crt_month, &crt_day);
+    scanf("%d%d%d", &crnt_year, &crnt_month, &crnt_day);
 
     printf("Expiry date (YYYY / MM /DD): ");
     scanf("%d%d%d", &year, &month, &day);
 
     double total_stock_value = strip * strip_price;
-    int days_until_expiry = (year - crt_year) * 365 + (month - crt_month) * 30 + (day - crt_day);
+    int days_until_expiry = (year - crnt_year) * 365 + (month - crnt_month) * 30 + (day - crnt_day);
 
 
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
@@ -41,14 +41,14 @@ int main(void)
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
 
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
-    printf("|                           RECORDS                             |\n");
+    printf("|                            RECORDS                            |\n");
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
     printf("   1.Batch code           : %d                                   \n",batch_code);
     printf("   2.Medicine name        : Paracetamol                          \n");
     printf("   3.Strips in stock      : %d                                   \n",strip);
     printf("   4.Price per strip      : %.2lf                                \n",strip_price);
     printf("   5.Total value of stock : %.2lf                                \n",total_stock_value);
-    printf("   6.Current date         : %d/%d/%d                             \n",crt_year,crt_month,crt_day);
+    printf("   6.Current date         : %d/%d/%d                             \n",crnt_year,crnt_month,crnt_day);
     printf("   7.Expiry date          : %d/%d/%d                             \n",year,month,day);
     printf("   8.Days until expiry    : %d                                   \n",days_until_expiry);
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
@@ -57,4 +57,5 @@ int main(void)
 
     return 0;
 }
+
 
