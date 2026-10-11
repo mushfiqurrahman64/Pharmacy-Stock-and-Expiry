@@ -2,9 +2,9 @@
 int main(void)
 {   
 
-    int batch_code,strip,year,month,day;
+    int batch_code,strip,crnt_year, crnt_month, crnt_day;
 
-    int crnt_year, crnt_month, crnt_day;
+    int expiry_year, expiry_month, expiry_day;
 
     double strip_price;
 
@@ -21,13 +21,11 @@ int main(void)
     scanf("%d%d%d", &crnt_year, &crnt_month, &crnt_day);
 
     printf("Expiry date (YYYY / MM /DD): ");
-    scanf("%d%d%d", &year, &month, &day);
+    scanf("%d%d%d", &expiry_year, &expiry_month, &expiry_day);
 
     double total_stock_value = strip * strip_price;
 
-    int days_until_expiry1 = (year - crnt_year) * 365 + (month - crnt_month) * 30 + (day - crnt_day)+1;
-
-    int days_until_expiry2 = (year - crnt_year) * 365 + (month - crnt_month) * 30 + (day - crnt_day);
+    int days_until_expiry = (expiry_year - crnt_year) * 365 + (expiry_month - crnt_month) * 30 + (expiry_day - crnt_day);
 
 
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
@@ -37,12 +35,12 @@ int main(void)
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
     printf("|                            MENU                               |\n");
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
-    printf("|   1.Receive a batch                                           |\n");
-    printf("|   2.Sell strips                                               |\n");
-    printf("|   3.Batches that are Expiring                                 |\n");
-    printf("|   4.Strips that are below reorder level                       |\n");
-    printf("|   5.Value of the total stock                                  |\n");
-    printf("|   6.Save & load                                               |\n");
+    printf("   1.Receive a batch                                            \n");
+    printf("   2.Sell strips                                                \n");
+    printf("   3.Batches that are Expiring                                  \n");
+    printf("   4.Strips that are below reorder level                        \n");
+    printf("   5.Value of the total stock                                   \n");
+    printf("   6.Save & load                                                \n");
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
 
     printf("+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+\n");
@@ -54,19 +52,13 @@ int main(void)
     printf("   4.Price per strip      : %.2lf                                \n",strip_price);
     printf("   5.Total value of stock : %.2lf                                \n",total_stock_value);
     printf("   6.Current date         : %d/%d/%d                             \n",crnt_year,crnt_month,crnt_day);
-    printf("   7.Expiry date          : %d/%d/%d                             \n",year,month,day);
-if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-    printf("   8.Days until expiry    : %d                                   \n",days_until_expiry1);
-    }
-    else
-    {
-    printf("   8.Days until expiry    : %d                                   \n",days_until_expiry2);
-    }
+    printf("   7.Expiry date          : %d/%d/%d                             \n",expiry_year,expiry_month,expiry_day);
+    printf("   8.Days until expiry    : %d                                   \n",days_until_expiry);
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
 
 
-    return 0;
+  return 0;
 }
 
 
